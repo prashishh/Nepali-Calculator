@@ -22,40 +22,40 @@
                     <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>१</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>२</a>
+                    <a class="pure-button pure-button-primary number-btn" value="2" ng-click='updateOutput(2)'>२</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>३</a>
+                    <a class="pure-button pure-button-primary number-btn" value="3" ng-click='updateOutput(3)'>३</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>+</a>
-                </div> 
-        </div>
-
-        <div class="pure-g row">
-                <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>४</a>
-                </div> 
-                <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>५</a>
-                </div> 
-                <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>६</a>
-                </div> 
-                <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>-</a>
+                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='add()'>+</a>
                 </div> 
         </div>
 
         <div class="pure-g row">
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>७</a>
+                    <a class="pure-button pure-button-primary number-btn" value="4" ng-click='updateOutput(4)'>४</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>८</a>
+                    <a class="pure-button pure-button-primary number-btn" value="5" ng-click='updateOutput(5)'>५</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>९</a>
+                    <a class="pure-button pure-button-primary number-btn" value="6" ng-click='updateOutput(6)'>६</a>
+                </div> 
+                <div class="pure-u-1-4">
+                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='subtract()'>-</a>
+                </div> 
+        </div>
+
+        <div class="pure-g row">
+                <div class="pure-u-1-4">
+                    <a class="pure-button pure-button-primary number-btn" value="7" ng-click='updateOutput(7)'>७</a>
+                </div> 
+                <div class="pure-u-1-4">
+                    <a class="pure-button pure-button-primary number-btn" value="8" ng-click='updateOutput(8)'>८</a>
+                </div> 
+                <div class="pure-u-1-4">
+                    <a class="pure-button pure-button-primary number-btn" value="9" ng-click='updateOutput(9)'>९</a>
                 </div> 
                 <div class="pure-u-1-4">
                     <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>*</a>
@@ -64,13 +64,13 @@
 
         <div class="pure-g row">
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn clear-btn" value="1" ng-click='updateOutput(1)'>c</a>
+                    <a class="pure-button pure-button-primary number-btn clear-btn" value="1" ng-click='clear()'>c</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>०</a>
+                    <a class="pure-button pure-button-primary number-btn" value="0" ng-click='updateOutput(0)'>०</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>=</a>
+                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='calculate()'>=</a>
                 </div> 
                 <div class="pure-u-1-4">
                     <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>/</a>
@@ -78,56 +78,11 @@
         </div>
     </div>
 </div>
-</div>
 
-<!--
-    <a class="pure-button pure-button-primary">+</a>
-    <a class="pure-button pure-button-primary">-</a>
-    <a class="pure-button pure-button-primary pure-button-xlarge ">+</a>
-
-    <a class="pure-button pure-button-xsmall">Extra Small Button</a>
-    <a class="pure-button pure-button-small">Small Button</a>
-    <a class="pure-button">Regular Button</a>
-    <a class="pure-button pure-button-large">Large Button</a>
-    <a class="pure-button pure-button-xlarge">Extra Large Button</a>
--->
-
-    <!--
-    <div class="calcbody">
-        <div class="thinborder">
-            <p class="output" name="output">{{nepoutput}}
-                <br>{{operationToken}}</p>
-        </div>
-        <div class="calcbuttons">
-
-            <button name="btn1" class="number-btnerbutton" value="1" ng-click='updateOutput(1)'>1</button>
-            <button name="btn2" class="number-btnerbutton" value="2" ng-click='updateOutput(2)'>2</button>
-            <button name="btn3" class="number-btnerbutton" value="3" ng-click='updateOutput(3)'>3</button>
-            <button name="btnMinus" class="operationbutton" ng-click='subtract()'>-</button>
-            <br>
-            <button name="btn4" class="number-btnerbutton" value="4" ng-click='updateOutput(4)'>4</button>
-            <button name="btn5" class="number-btnerbutton" value="5" ng-click='updateOutput(5)'>5</button>
-            <button name="btn6" class="number-btnerbutton" value="6" ng-click='updateOutput(6)'>6</button>
-            <button name="btnPlus" class="operationbutton" ng-click='add()'>+</button>
-            <br>
-            <button name="btn7" class="number-btnerbutton" value="7" ng-click='updateOutput(7)'>7</button>
-            <button name="btn8" class="number-btnerbutton" value="8" ng-click='updateOutput(8)'>8</button>
-            <button name="btn9" class="number-btnerbutton" value="9" ng-click='updateOutput(9)'>9</button>
-            <button name="btnEquals" class="operationbutton" ng-click='calculate()'>=</button>
-            <br>
-            <button name="btn0" class="number-btnerbutton" value="0" ng-click='updateOutput(0)'>0</button>
-            <button name="btnClear" class="clearbutton" ng-click='clear()'>CLEAR</button>
-            <button name="btnConvert" class="clearbutton" ng-click='convert()'>CLEAR</button>
-
-        </div>
+    <div class="pure-g output-pane2">
+        <div class="pure-u-1-1"><input class="neplang" type="text" value="{{neplang}}" disabled/></div>
     </div>
-    <p>pendingOperation: {{pendingOperation}}
-        <br>lastOperation: {{lastOperation}}
-        <br>runningTotal: {{runningTotal}}
-        <br>pendingValue: {{pendingValue}}
-        <br>newnumber-btner: {{newnumber-btner}}</p>
 </div>
--->
 
 <script src="js/lib/angular.min.js"></script>
 <script src="js/lib/angular-resource.min.js"></script>

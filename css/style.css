@@ -2,6 +2,7 @@
 
 @media all{
     .mainwrapper {
+        margin-top: 10px;
         right: 0px;
     }
 
@@ -54,25 +55,46 @@ a.equal-btn {
 }
 
 .output-pane {
-    height: 70px;
-    font-size: 30px;
+    margin: 7px;
+    height: 72px;
+    font-size: 25px;
     background-color: #dcdcdc;
-    margin-left: 6px;
+    padding: 5px 6px 0 0;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888; 
+}
+
+.output-pane2 {
+    margin: 7px;
+    height: 45px;
+    font-size: 20px;
+    background-color: #dcdcdc;
+    padding: 5px 6px 0 0;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888; 
 }
 
 input[type="text"][disabled] {
     width: 100%;
     text-align: right;
     float: right;
+    margin-right: 5px;
+    font-size: 35px;
     padding: 0px;
     border: none;
     background-color: #dcdcdc;
 }
 
 input[type="text"] {
-    margin-left: 5px;
     width: 100%;
     color: #000;
+}
+
+input[type="text"][disabled].neplang {
+    margin-top:5px;
+    font-size: 20px;
 }
 
 .row {
@@ -80,7 +102,7 @@ input[type="text"] {
 }
 
 .rowfirst {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .borderyes {

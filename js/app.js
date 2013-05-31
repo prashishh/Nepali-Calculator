@@ -13,6 +13,7 @@ nepCalculatorApp.controller('mainController',
         $scope.runningTotal = null;
         $scope.pendingValue = null;
         $scope.lastOperation = null;
+        $scope.neplang = "";
         $scope.nDigit = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९' ];
 
         // Constants
@@ -152,4 +153,10 @@ nepCalculatorApp.controller('mainController',
             console.log($scope.output);
             console.log(nepDigit.convertMe($scope.output));
         }
+
+        $scope.$watch('output', function (newValue, oldValue, scope) {
+            if (newValue && newValue !== oldValue) {
+                $scope.neplang = nepDigit.convertMe(String(newValue));
+            }
+        });
 });
