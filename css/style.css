@@ -1,0 +1,62 @@
+
+.mainwrapper
+{
+    width: 380px;
+}
+.pure-button-xsmall {
+    font-size: 70%;
+}
+
+.pure-button-small {
+    font-size: 85%;
+}
+
+.pure-button-large {
+    font-size: 110%;
+}
+
+.pure-button-xlarge {
+    font-size: 205%;
+}
+
+.pure-button-primary
+{    
+    height: 10px;
+    width: 16px;
+    overflow: hidden;
+    margin-top: -5px;
+}
+
+.output-pane 
+{
+    margin: 5px;
+    height: 70px;
+    font-size: 30px;
+    width: 100%;
+}
+
+.number-btn
+{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 30px;
+}
+
+input[type="text"]
+{
+    border: none;
+}
+
+.row
+{
+    margin-top: 5px;
+}
+
+.rowfirst
+{
+    margin-top: 10px;
+}
+.borderyes 
+{
+    border: 1px solid #000;
+}
