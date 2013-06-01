@@ -1,8 +1,3 @@
-/*
-Developed by Prashish Rajbhandari
-@prashishh
-*/
-
 var nepDigit = {
   digit_map : ['', 'एक', 'दुई' ,'तीन', 'चार', 'पाँच' , 'छ', 'सात' , 'आठ' , 'नौँ' , 'दश', 'एघार', 'बह्र', 'तेह्र', 'चौध', 'पन्ध्र', 'शोह्र', 'सत्र', 'अठार', 'उन्नाइस', 'बीस', 'एकाइस', 'बाइस', 'तेइस', 'चौबीस', 'पचीस', 'छबीस', 'सत्ताइस', 'अठाइस', 'उन्नतीस', 'तीस', 'एकतीस', 'बतीस', 'तेइतीस', 'चौतीस', 'पैँतीस', 'छतीस', 'सैँतीस', 'अठसैँतीस', 'उन्नचालीस', 'चालीस', 'एकचालीस', 'बैयालीस', 'तीर्‍चालीस', 'चौवालीस', 'पैँतालीस', 'छैयालीस', 'सडचालीस', 'अडचालीस', 'उन्नपचास', 'पचास', 'एकौन्न', 'बाउन्न', 'तिर्‍पन्न', 'चौवन्न', 'पचपन्न', 'छपन्न', 'सन्तौन्न', 'आन्ठौन्न', 'उन्नसाठी', 'साठी', 'एकसाठी', 'बैसाठी', 'तीर्‍साठी', 'चौवसाठी', 'पैँसाठी', 'छैसाठी', 'सडसाठी', 'अडसाठी', 'उन्नसतरी', 'सतरी', 'एक्तर', 'बहतर', 'तिर्‍हतर', 'चौहतर', 'पच्चतर', 'छहतर', 'सत्त्ततर', 'अठत्त्ततर', 'उन्नाअशी', 'अशी',  'एकाशी', 'बैयाशी', 'तीर्याशी', 'चौवाशी', 'पचाशी', 'छैयाशी', 'सडाशी', 'अडाशी', 'उन्ननबे', 'नब्बे', 'एकानबे', 'बैयानबे', 'तिर्यानबे', 'चौवानबे', 'पन्चानबे', 'चयानबे', 'सन्तानबे', 'अन्ठानबे', 'उन्नसय', 'सय' ],
 
@@ -57,14 +52,14 @@ var nepDigit = {
           if (result == '')
             return nepDigit.convertMe(number.substring(1,len));
           else 
-            return result + ' ' + nepDigit.multiple_map[len-2] + ' ' + nepDigit.convertMe(number.substring(2,len));
+            return result + ' ' + nepDigit.multiple_map[len-2] + ' ' + nepDigit.convertMe(number.substring(1,len));
         } 
         else {
           var result = nepDigit.convertTwo(number[0]+number[1]);
           if (result == '')
             return nepDigit.convertMe(number.substring(2,len));
           else 
-            return nepDigit.convertTwo(number[0]+number[1]) + ' ' + nepDigit.multiple_map[len-2] + ' ' + nepDigit.convertMe(number.substring(2,len));
+            return nepDigit.convertTwo(number[0]+number[1]) + ' ' + nepDigit.multiple_map[len-2] + ' ' + nepDigit.convertMe(number.substring(1,len));
         }
       }
       // if remainder equal to 0, map first digit and recursively break the rest of the digit - pattern

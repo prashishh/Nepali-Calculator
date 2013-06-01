@@ -1,0 +1,15 @@
+{ 
+	"version" : "1.0a",
+	"name": "Nepali Calculator", 
+	"description": "Nepali Calculator with digit to language convertor", 
+	"launch_path": "/index.html", 
+	"developer": { 
+		"name": "Prashish Rajbhandari", 
+		"url": "http://prashishrajbhandari.com.np" 
+	}, 
+	"icons": { 
+		"60": "/img/icon-60.png",
+		"128": "/img/icon-128.png"
+	}, 
+	"default_locale": "en" 
+}
