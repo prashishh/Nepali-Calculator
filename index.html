@@ -11,9 +11,10 @@
 
 <div ng-controller="mainController">
 <div class="mainwrapper">
+  
     <div class="pure-g output-pane">
-        <div class="pure-u-1-1"><input type="text" value="{{nepoutput}}" disabled/></div>
-        <div class="pure-u-1-1"><input type="text" value="{{operationToken}}" disabled/></div>
+        <div class="pure-u-1-1"><textarea disabled>{{nepoutput}}</textarea></div>
+        <div class="pure-u-1-1"><textarea disabled>{{operationToken}}</textarea></div>
     </div>
 
     <div class="pure-g btn-wrapper">
@@ -58,7 +59,7 @@
                     <a class="pure-button pure-button-primary number-btn" value="9" ng-click='updateOutput(9)'>९</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>*</a>
+                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='multiply();'>*</a>
                 </div> 
         </div>
 
@@ -73,14 +74,14 @@
                     <a class="pure-button pure-button-primary number-btn" value="1" ng-click='calculate()'>=</a>
                 </div> 
                 <div class="pure-u-1-4">
-                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='updateOutput(1)'>/</a>
+                    <a class="pure-button pure-button-primary number-btn" value="1" ng-click='divide();'>/</a>
                 </div> 
         </div>
     </div>
 </div>
 
     <div class="pure-g output-pane2">
-        <div class="pure-u-1-1"><input class="neplang" type="text" value="{{neplang}}" disabled/></div>
+        <div class="pure-u-1-1"><textarea disabled>{{neplang}}</textarea></div>
     </div>
 </div>
 

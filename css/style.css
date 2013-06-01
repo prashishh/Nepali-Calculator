@@ -1,6 +1,6 @@
 
 
-@media all{
+@media {
     .mainwrapper {
         margin-top: 10px;
         right: 0px;
@@ -15,8 +15,11 @@
     }
 
     .pure-button-primary {
-        margin: -5px 5px 0px 3px;
+        margin: -5px 5px 0px 0px;
         margin-right: 10px;
+        -moz-box-shadow: 0 0 5px #737373;
+        -webkit-box-shadow: 0 0 5px#737373;
+        box-shadow: 0 0 5px #737373; 
     }
 
 }
@@ -76,7 +79,7 @@ a.equal-btn {
     box-shadow: 0 0 5px #888; 
 }
 
-input[type="text"][disabled] {
+textarea[disabled] {
     width: 100%;
     text-align: right;
     float: right;
@@ -85,10 +88,6 @@ input[type="text"][disabled] {
     padding: 0px;
     border: none;
     background-color: #dcdcdc;
-}
-
-input[type="text"] {
-    width: 100%;
     color: #000;
 }
 

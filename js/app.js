@@ -19,8 +19,12 @@ nepCalculatorApp.controller('mainController',
         // Constants
         var ADD = "adding";
         var SUBTRACT = "subtracting";
+        var MULTIPLY = "multiplying";
+        var DIVIDE = "dividing";
         var ADD_TOKEN = "+";
         var SUBTRACT_TOKEN = "-";
+        var MULTIPLY_TOKEN = "*";
+        var DIVIDE_TOKEN = "/";
 
         $scope.updateOutput = function (btn) {
             if ($scope.output == "0" || $scope.newNumber) {
@@ -40,6 +44,10 @@ nepCalculatorApp.controller('mainController',
                     $scope.runningTotal += $scope.pendingValue;
                 } else if ($scope.runningTotal && $scope.pendingOperation == SUBTRACT) {
                     $scope.runningTotal -= $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == MULTIPLY) {
+                    $scope.runningTotal *= $scope.pendingValue;
+                }  else if ($scope.runningTotal && $scope.pendingOperation == DIVIDE) {
+                    $scope.runningTotal /= $scope.pendingValue;
                 } else {
                     $scope.runningTotal = $scope.pendingValue;
                 }
@@ -57,6 +65,10 @@ nepCalculatorApp.controller('mainController',
                     $scope.runningTotal -= $scope.pendingValue;
                 } else if ($scope.runningTotal && $scope.pendingOperation == ADD) {
                     $scope.runningTotal += $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == MULTIPLY) {
+                    $scope.runningTotal *= $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == DIVIDE) {
+                    $scope.runningTotal /= $scope.pendingValue;
                 } else {
                     $scope.runningTotal = $scope.pendingValue;
                 }
@@ -64,6 +76,49 @@ nepCalculatorApp.controller('mainController',
             $scope.setOperationToken(SUBTRACT);
             $scope.setOutput(String($scope.runningTotal));
             $scope.pendingOperation = SUBTRACT;
+            $scope.newNumber = true;
+            $scope.pendingValue = null;
+        };
+
+        $scope.multiply = function () {
+            if ($scope.pendingValue) {
+                if ($scope.runningTotal && ($scope.pendingOperation == MULTIPLY)) {
+                    $scope.runningTotal *= $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == ADD) {
+                    $scope.runningTotal += $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == SUBTRACT) {
+                    $scope.runningTotal -= $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == DIVIDE) {
+                    $scope.runningTotal /= $scope.pendingValue;
+                } else {
+                    $scope.runningTotal = $scope.pendingValue;
+                }
+            }
+            $scope.setOperationToken(MULTIPLY);
+            $scope.setOutput(String($scope.runningTotal));
+            $scope.pendingOperation = MULTIPLY;
+            $scope.newNumber = true;
+            $scope.pendingValue = null;
+        };
+
+
+        $scope.divide = function () {
+            if ($scope.pendingValue) {
+                if ($scope.runningTotal && ($scope.pendingOperation == DIVIDE)) {
+                    $scope.runningTotal /= $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == ADD) {
+                    $scope.runningTotal += $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == SUBTRACT) {
+                    $scope.runningTotal -= $scope.pendingValue;
+                } else if ($scope.runningTotal && $scope.pendingOperation == MULTIPLY) {
+                    $scope.runningTotal *= $scope.pendingValue;
+                } else {
+                    $scope.runningTotal = $scope.pendingValue;
+                }
+            }
+            $scope.setOperationToken(DIVIDE);
+            $scope.setOutput(String($scope.runningTotal));
+            $scope.pendingOperation = DIVIDE;
             $scope.newNumber = true;
             $scope.pendingValue = null;
         };
@@ -79,6 +134,12 @@ nepCalculatorApp.controller('mainController',
             } else if ($scope.pendingOperation == SUBTRACT) {
                 $scope.runningTotal -= $scope.pendingValue;
                 $scope.lastOperation = SUBTRACT;
+            } else if ($scope.pendingOperation == MULTIPLY) {
+                $scope.runningTotal *= $scope.pendingValue;
+                $scope.lastOperation = MULTIPLY;
+            } else if ($scope.pendingOperation == DIVIDE) {
+                $scope.runningTotal /= $scope.pendingValue;
+                $scope.lastOperation = DIVIDE;
             } else {
                 if ($scope.lastOperation) {
                     if ($scope.lastOperation == ADD) {
@@ -90,6 +151,18 @@ nepCalculatorApp.controller('mainController',
                     } else if ($scope.lastOperation == SUBTRACT) {
                         if ($scope.runningTotal) {
                             $scope.runningTotal -= $scope.lastValue;
+                        } else {
+                            $scope.runningTotal = 0;
+                        }
+                    } else if ($scope.lastOperation == MULTIPLY) {
+                        if ($scope.runningTotal) {
+                            $scope.runningTotal *= $scope.lastValue;
+                        } else {
+                            $scope.runningTotal = 0;
+                        }
+                    } else if ($scope.lastOperation == DIVIDE) {
+                        if ($scope.runningTotal) {
+                            $scope.runningTotal /= $scope.lastValue;
                         } else {
                             $scope.runningTotal = 0;
                         }
@@ -124,6 +197,12 @@ nepCalculatorApp.controller('mainController',
                 $scope.operationToken = ADD_TOKEN;
             } else if (operation == SUBTRACT) {
                 $scope.operationToken = SUBTRACT_TOKEN;
+            } else if (operation == MULTIPLY) {
+                $scope.operationToken = MULTIPLY_TOKEN;
+            } else if (operation == MULTIPLY) {
+                $scope.operationToken = MULTIPLY_TOKEN;
+            } else if (operation == DIVIDE) {
+                $scope.operationToken = DIVIDE_TOKEN;
             } else {
                 $scope.operationToken = "";
             }
@@ -147,11 +226,6 @@ nepCalculatorApp.controller('mainController',
                     output += $scope.nDigit[nepNum[i]];
                 return output;
             }
-        }
-
-        $scope.convert = function() {
-            console.log($scope.output);
-            console.log(nepDigit.convertMe($scope.output));
         }
 
         $scope.$watch('output', function (newValue, oldValue, scope) {
